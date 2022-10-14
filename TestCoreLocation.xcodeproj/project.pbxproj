@@ -14,6 +14,7 @@
 		3C3DB35228F5EDBE00FB4E0D /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3DB35128F5EDBE00FB4E0D /* LocationRequestView.swift */; };
 		3C3DB35428F5EDD400FB4E0D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3DB35328F5EDD400FB4E0D /* LocationManager.swift */; };
 		3C9A08D428F9E01E009E622D /* LocationValuesConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A08D328F9E01E009E622D /* LocationValuesConverterViewModel.swift */; };
+		3C9A08D728F9E50A009E622D /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A08D628F9E50A009E622D /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3C3DB35328F5EDD400FB4E0D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3C3DB35528F5F65600FB4E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3C9A08D328F9E01E009E622D /* LocationValuesConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationValuesConverterViewModel.swift; sourceTree = "<group>"; };
+		3C9A08D528F9E4F7009E622D /* TestCoreLocation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestCoreLocation.entitlements; sourceTree = "<group>"; };
+		3C9A08D628F9E50A009E622D /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +61,14 @@
 		3C3DB34228F5EC5800FB4E0D /* TestCoreLocation */ = {
 			isa = PBXGroup;
 			children = (
+				3C9A08D528F9E4F7009E622D /* TestCoreLocation.entitlements */,
 				3C3DB35528F5F65600FB4E0D /* Info.plist */,
 				3C3DB34328F5EC5800FB4E0D /* TestCoreLocationApp.swift */,
 				3C3DB34528F5EC5800FB4E0D /* ContentView.swift */,
 				3C3DB35128F5EDBE00FB4E0D /* LocationRequestView.swift */,
 				3C3DB35328F5EDD400FB4E0D /* LocationManager.swift */,
 				3C9A08D328F9E01E009E622D /* LocationValuesConverterViewModel.swift */,
+				3C9A08D628F9E50A009E622D /* WeatherViewModel.swift */,
 				3C3DB34728F5EC5800FB4E0D /* Assets.xcassets */,
 				3C3DB34928F5EC5800FB4E0D /* Preview Content */,
 			);
@@ -149,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3DB35428F5EDD400FB4E0D /* LocationManager.swift in Sources */,
+				3C9A08D728F9E50A009E622D /* WeatherViewModel.swift in Sources */,
 				3C3DB34628F5EC5800FB4E0D /* ContentView.swift in Sources */,
 				3C9A08D428F9E01E009E622D /* LocationValuesConverterViewModel.swift in Sources */,
 				3C3DB35228F5EDBE00FB4E0D /* LocationRequestView.swift in Sources */,
@@ -278,6 +284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TestCoreLocation/TestCoreLocation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestCoreLocation/Preview Content\"";
@@ -309,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TestCoreLocation/TestCoreLocation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestCoreLocation/Preview Content\"";
