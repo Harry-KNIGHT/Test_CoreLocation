@@ -21,7 +21,7 @@ struct ContentView: View {
 				Text("Speed Accuracy: \(String(location.speedAccuracy))")
 				Text("TimeStamp: \(location.timestamp)")
 				Text("Altitude \(String(location.altitude))")
-				Text("Km/h: \(String(locationValueConverterVM.convertMeterInSecondsToKm(speed: location.speed)))")
+				Text("Km/h: \(String(format: "%.2f", locationValueConverterVM.convertMeterInSecondsToKm(speed: location.speed)))")
 
 			}
 		}
