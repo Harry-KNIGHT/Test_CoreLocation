@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 	@ObservedObject var locationManager = LocationManager.shared
+	@ObservedObject var locationValueConverterVM = LocationValuesConverterViewModel()
     var body: some View {
 		VStack(alignment: .leading) {
 			if locationManager.userLocation == nil {
@@ -20,6 +21,7 @@ struct ContentView: View {
 				Text("Speed Accuracy: \(String(location.speedAccuracy))")
 				Text("TimeStamp: \(location.timestamp)")
 				Text("Altitude \(String(location.altitude))")
+				Text(String(locationValueConverterVM.convertMeterInSecondsToKm(speed: location.speed)))
 
 			}
 		}
@@ -29,5 +31,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+			.environmentObject(LocationValuesConverterViewModel())
     }
 }

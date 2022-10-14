@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TestCoreLocationApp: App {
+	@StateObject var locationValuesConverterVM = LocationValuesConverterViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+				.environmentObject(locationValuesConverterVM)
         }
     }
 }
