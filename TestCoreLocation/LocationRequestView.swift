@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationRequestView: View {
     var body: some View {
 		ZStack {
-			Color.cyan.ignoresSafeArea()
+			LinearGradient(colors: [.cyan, .blue], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
 
 			VStack {
 				Spacer()
