@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationRequestView: View {
     var body: some View {
 		ZStack {
-			Color.blue.ignoresSafeArea()
+			Color.cyan.ignoresSafeArea()
 
 			VStack {
 				Spacer()
@@ -26,8 +26,8 @@ struct LocationRequestView: View {
 					.font(.system(.title2, weight: .semibold))
 					.multilineTextAlignment(.center)
 					.padding()
-				Text("Start sharing your location with us")
-					.frame(width: 140)
+				Text("Start sharing your location with us for enjoy all app features.")
+					.frame(width: 220)
 					.multilineTextAlignment(.center)
 					.padding()
 
@@ -43,20 +43,10 @@ struct LocationRequestView: View {
 							.foregroundColor(.blue)
 					})
 					.frame(width: UIScreen.main.bounds.width)
-					.padding(.horizontal, -32)
+					.padding(.horizontal, -50)
 					.background(.white)
 					.clipShape(Capsule())
 					.padding()
-
-
-					Button(action: {
-						print("Dismiss")
-					}, label: {
-						Text("Maybe later")
-							.padding()
-							.font(.headline)
-							.foregroundColor(.white)
-					})
 				}
 				.padding(.bottom, 32)
 			}

@@ -42,7 +42,6 @@ struct ContentView: View {
 				}
 			}
 		}
-		.padding()
 		.task {
 			if let location = locationManager.userLocation {
 				
