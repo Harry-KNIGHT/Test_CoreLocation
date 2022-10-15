@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
 	@ObservedObject var locationManager = LocationManager.shared
@@ -16,25 +17,32 @@ struct ContentView: View {
 			if locationManager.userLocation == nil {
 				LocationRequestView()
 			} else if let location = locationManager.userLocation {
-				Text("Lat: \(String(location.coordinate.latitude))")
-				Text("Long: \(String(location.coordinate.longitude))")
-				Text("Speed: \(String(location.speed))")
-				Text("Speed Accuracy: \(String(location.speedAccuracy))")
-				Text("TimeStamp: \(location.timestamp)")
-				Text("Altitude \(String(location.altitude))")
-				Text("Km/h: \(String(format: "%.2f", locationValueConverterVM.convertMeterInSecondsToKm(speed: location.speed)))")
-				if let weather = weatherVM.weather {
-					HStack {
-						Text(String(weather.currentWeather.temperature.description))
-						Image(systemName: weather.currentWeather.symbolName)
-						Text(String(weather.currentWeather.date.description))
+				VStack(alignment: .leading) {
+					Text("Lat: \(String(location.coordinate.latitude))")
+					Text("Long: \(String(location.coordinate.longitude))")
+					Text("Speed: \(String(location.speed))")
+					Text("Speed Accuracy: \(String(location.speedAccuracy))")
+					Text("TimeStamp: \(location.timestamp)")
+					Text("Altitude \(String(format: "%.2tf", location.altitude))m upper sea level")
+					Text("Km/h: \(String(format: "%.2f", locationValueConverterVM.convertMeterInSecondsToKm(speed: location.speed)))")
+					Text("\(String(location.distance(from: CLLocation(latitude: 48.85826, longitude: 2.294499))))m away from Eiffeil Tower")
+
+					Text("\( locationValueConverterVM.convertMetersInKilometer(distanceInMeter: location.distance(from:  CLLocation(latitude: 48.85826, longitude: 2.294499))))KM away from Eiffeil Tower")
+
+					if let weather = weatherVM.weather {
+						HStack {
+							Text(String(weather.currentWeather.temperature.description))
+							Image(systemName: weather.currentWeather.symbolName)
+							Text(String(weather.currentWeather.date.description))
+						}
+						.padding()
+						.background(.thinMaterial)
+						.cornerRadius(10)
 					}
-					.padding()
-					.background(.thinMaterial)
-					.cornerRadius(10)
 				}
 			}
 		}
+		.padding()
 		.task {
 			if let location = locationManager.userLocation {
 				
