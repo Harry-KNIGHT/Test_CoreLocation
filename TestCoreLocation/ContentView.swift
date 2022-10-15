@@ -40,12 +40,12 @@ struct ContentView: View {
 						.cornerRadius(10)
 					}
 				}
-			}
-		}
-		.task {
-			if let location = locationManager.userLocation {
-				
-				await weatherVM.getWeather(lat: location.coordinate.latitude, long: 	location.coordinate.longitude)
+				.task {
+					if let location = locationManager.userLocation {
+
+						await weatherVM.getWeather(lat: location.coordinate.latitude, long: 	location.coordinate.longitude)
+					}
+				}
 			}
 		}
     }
